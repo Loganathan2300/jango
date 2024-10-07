@@ -7,12 +7,20 @@ import EmployeeDelivery from './pages/EmployeeDelivery';
 import OrganisationDashboard from './pages/OrganisationDashboard';
 import OrganisationEmployeePage from './pages/OrganisationEmployeePage';
 import OrganisationCustomerPage from './pages/OrganisationCustomerPage';
+import OrganisationOrders from './pages/OrganisationOrders';
+import OrganisationDelivery from './pages/OrganisationDelivery';
 
 function App() {
   return (
     <div className="App">
-      <OrganisationCustomerPage/>
+      {/* <OrganisationCustomerPage/> */}
       {/* <EmployeeDashboard/> */}
+      {/* <OrganisationOrders/> */}
+      {/* <EmployeeDelivery/> */}
+      {/* <EmployeeOrderList/> */}
+      {/* <OrganisationDashboard/> */}
+      {/* <OrganisationOrders/> */}
+      <OrganisationDelivery/>
 
     </div>
   );

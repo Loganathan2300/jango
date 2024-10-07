@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Card, Col, Form, Pagination, Row, Table } from 'react-bootstrap';
 import '../App.css';
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 const EmployeeOrderList = () => {
 
@@ -14,17 +15,23 @@ const EmployeeOrderList = () => {
 
     <Row className='p-0 m-0 vh-100'>
 
+
       <Col xl={2} className='sidebar-color'>
         <div className='sidebar side-round '>
           <ul className='menu mt-5 px-3 list-unstyled text-white'>
             <li >
-              <h4>Dashboard</h4>
+              <h4>
+                <span><Icon icon="ic:outline-dashboard" width="20" height="20" /></span>
+                Dashboard</h4>
+            </li>
+            <li className='pt-2 '>
+              <h4>
+                <span><Icon icon="lsicon:order-outline" width="20" height="20" /></span>OrdersList</h4>
             </li>
             <li className='pt-2'>
-              <h4>OrdersList</h4>
-            </li>
-            <li className='pt-2'>
-              <h4>Delivery Details</h4>
+              <h4>
+                <span><Icon icon="carbon:delivery" width="20" height="20" /></span>
+                Delivery Details</h4>
             </li>
           </ul>
         </div>
@@ -73,21 +80,21 @@ const EmployeeOrderList = () => {
         </Table>
         <div className='d-flex justify-content-center mt-4'>
 
-<Pagination  >
-    <Pagination.First />
-    <Pagination.Prev />
-    <Pagination.Item>{1}</Pagination.Item>
+          <Pagination  >
+            <Pagination.First />
+            <Pagination.Prev />
+            <Pagination.Item>{1}</Pagination.Item>
 
 
-    <Pagination.Item>{2}</Pagination.Item>
-    <Pagination.Item active>{3}</Pagination.Item>
-    <Pagination.Item >{4}</Pagination.Item>
-    <Pagination.Item>{5}</Pagination.Item>
+            <Pagination.Item>{2}</Pagination.Item>
+            <Pagination.Item active>{3}</Pagination.Item>
+            <Pagination.Item >{4}</Pagination.Item>
+            <Pagination.Item>{5}</Pagination.Item>
 
-    <Pagination.Next />
-    <Pagination.Last />
-  </Pagination>
-</div>
+            <Pagination.Next />
+            <Pagination.Last />
+          </Pagination>
+        </div>
       </Col>
 
     </Row>

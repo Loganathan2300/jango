@@ -1,49 +1,63 @@
+import { Icon } from '@iconify/react/dist/iconify.js'
 import React from 'react'
-import { Button, Card, Col, Form, Pagination, Row, Table } from 'react-bootstrap'
-import { Icon } from '@iconify/react';
+import { Card, Col, Form, Pagination, Row, Table } from 'react-bootstrap'
 
-const OrganisationCustomerPage = () => {
+const OrganisationDelivery = () => {
   return (
     <div>
-            <Row
-             className='p-0 m-0 vh-100'>
+         <Row className='p-0 m-0 vh-100'>
+
 
 <Col xl={2} className='sidebar-color'>
   <div className='sidebar side-round '>
     <ul className='menu mt-5 px-3 list-unstyled text-white'>
       <li >
-        <h4>Dashboard</h4>
+        <h4>
+          <span><Icon icon="ic:outline-dashboard" width="20" height="20" /></span>
+          Dashboard</h4>
       </li>
       <li className='pt-2'>
-        <h4>Employee Details</h4>
+        <h4>
+          <Icon icon="fluent:person-support-16-filled" width="20" height="20" />
+          Employee Details</h4>
       </li>
       <li className='pt-2'>
-        <h4>Customer Details</h4>
+        <h4>
+          <Icon icon="fluent:person-48-regular" width="20" height="20" />
+          Customer Details</h4>
+      </li>
+      <li className='pt-2'>
+        <h4>
+          <span><Icon icon="carbon:delivery" width="20" height="20" /></span>
+          Orders List</h4>
+      </li>
+      <li className='pt-2'>
+        <h4>
+          <span><Icon icon="carbon:delivery" width="20" height="20" /></span>
+          Delivery Details</h4>
       </li>
     </ul>
   </div>
 </Col>
 
 <Col xl={10} className='mt-4'>
-  <Card className='p-2  fs-5'>Customer Details</Card>
+  <Card className='p-2  fs-5'>Delivery Details</Card>
   <Row className='d-flex justify-content-between'>
     <Col xl={3} >
-      <Form.Control className='mt-4' type="text" placeholder="Search" />
-    </Col>
-    <Col xl={1}>
-    <Button className='btn-danger mt-4' >New User</Button>
+      <Form.Control className='mt-4' type="text" placeholder="Normal text" />
     </Col>
   </Row>
   <Table striped bordered className='mt-4'>
     <thead>
       <tr>
         <th>Sno</th>
-        <th>Employee Id</th>
-        <th>Organization Userid</th>
-        <th>Email</th>
-        <th>State </th>
-        <th>Actions</th>
-      </tr> 
+        <th>Delivery Id</th>
+        <th>Delivery Address</th>
+        <th>Phone Number</th>
+        <th>Cost </th>
+        <th>OrderID</th>
+        <th>shippingMethod</th>
+      </tr>
     </thead>
     <tbody>
       <tr>
@@ -52,6 +66,7 @@ const OrganisationCustomerPage = () => {
         <td>Otto</td>
         <td>mar-1</td>
         <td>@mdo</td>
+        <td className='text-center'><Icon icon="fluent-mdl2:completed-solid" width="20" height="20" /></td>
         <td className='text-center'><Icon icon="mdi:delete" width="20" height="20" /></td>
       </tr>
       <tr>
@@ -60,6 +75,7 @@ const OrganisationCustomerPage = () => {
         <td>Thornton</td>
         <td>mar-1</td>
         <td>@fat</td>
+        <td className='text-center'><Icon icon="tdesign:pending" width="20" height="20" /></td>
         <td className='text-center'><Icon icon="mdi:delete" width="20" height="20" /></td>
       </tr>
       <tr>
@@ -68,17 +84,18 @@ const OrganisationCustomerPage = () => {
         <td>Larry the Bird</td>
         <td>mar-1</td>
         <td>@twitter</td>
+        <td className='text-center'><Icon icon="fluent-mdl2:completed-solid" width="20" height="20" /></td>
         <td className='text-center'><Icon icon="mdi:delete" width="20" height="20" /></td>
       </tr>
     </tbody>
   </Table>
-<div className='d-flex justify-content-center mt-4'>
+  <div className='d-flex justify-content-center mt-4'>
 
-  <Pagination  >
+    <Pagination  >
       <Pagination.First />
       <Pagination.Prev />
       <Pagination.Item>{1}</Pagination.Item>
- 
+
 
       <Pagination.Item>{2}</Pagination.Item>
       <Pagination.Item active>{3}</Pagination.Item>
@@ -88,9 +105,7 @@ const OrganisationCustomerPage = () => {
       <Pagination.Next />
       <Pagination.Last />
     </Pagination>
-</div>
-
-
+  </div>
 </Col>
 
 </Row>
@@ -98,4 +113,4 @@ const OrganisationCustomerPage = () => {
   )
 }
 
-export default OrganisationCustomerPage;
+export default OrganisationDelivery
