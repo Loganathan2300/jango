@@ -73,7 +73,8 @@ export const OrderResult = () => {
                 </td>
               </tr>
               <tr>
-                <td>14433</td>
+                <td>
+                </td>
                 <td>Pending</td>
                 <td>14-09-2024</td>
                 <td>

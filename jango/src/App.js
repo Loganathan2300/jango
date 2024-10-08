@@ -1,29 +1,18 @@
-import './App.css';
-import Main from './Main';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import EmployeeOrderList from './pages/EmployeeOrderList';
-import EmployeeDashboard from './pages/EmployeeDashboard';
-import { Route, Router, Routes } from 'react-router-dom';
-import EmployeeDelivery from './pages/EmployeeDelivery';
-import OrganisationDashboard from './pages/OrganisationDashboard';
-import OrganisationEmployeePage from './pages/OrganisationEmployeePage';
-import OrganisationCustomerPage from './pages/OrganisationCustomerPage';
-import OrganisationOrders from './pages/OrganisationOrders';
-import OrganisationDelivery from './pages/OrganisationDelivery';
+import OrderDetails from './pages/OrderDetails';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      {/* <OrganisationCustomerPage/> */}
-      {/* <EmployeeDashboard/> */}
-      {/* <OrganisationOrders/> */}
-      {/* <EmployeeDelivery/> */}
-      {/* <EmployeeOrderList/> */}
-      {/* <OrganisationDashboard/> */}
-      {/* <OrganisationOrders/> */}
-      <OrganisationDelivery/>
-
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<EmployeeOrderList />} />
+        <Route path="/order/:id" element={<OrderDetails />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

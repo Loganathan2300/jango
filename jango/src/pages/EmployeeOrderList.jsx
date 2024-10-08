@@ -1,102 +1,115 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Card, Col, Form, Pagination, Row, Table } from 'react-bootstrap';
-import '../App.css';
-import { Icon } from '@iconify/react/dist/iconify.js';
+import { Card, Col, Form, Pagination, Row, Table } from 'react-bootstrap';
+import { Icon } from '@iconify/react'; 
+import '../App.css';  
 
 const EmployeeOrderList = () => {
-
   const [currentPage, setCurrentPage] = useState(1);
+  const navigate = useNavigate();
 
-  const handlePageClick = (event, page) => {
-    setCurrentPage(page);
+  const handleRowClick = (orderId) => {
+    navigate(`/order/${orderId}`); // Navigate to the order detail page
   };
+
   return (
-
     <Row className='p-0 m-0 vh-100'>
-
-
-      <Col xl={2} className='sidebar-color'>
-        <div className='sidebar side-round '>
-          <ul className='menu mt-5 px-3 list-unstyled text-white'>
-            <li >
-              <h4>
-                <span><Icon icon="ic:outline-dashboard" width="20" height="20" /></span>
-                Dashboard</h4>
+      {/* Sidebar */}
+      <Col xl={2} className='sidebar p-3'>
+        <div className='sidebar h-100'>
+          <ul className='list-unstyled'>
+            <li>
+             <h1 className='ps-4'>  Jango</h1>
             </li>
-            <li className='pt-2 '>
-              <h4>
-                <span><Icon icon="lsicon:order-outline" width="20" height="20" /></span>OrdersList</h4>
+            <li className='mb-4 mt-4'>
+              <h5 className='sidebar-item'>
+                <Icon icon="ic:outline-dashboard" width="22" height="22" className='me-2' />
+                Dashboard
+              </h5>
             </li>
-            <li className='pt-2'>
-              <h4>
-                <span><Icon icon="carbon:delivery" width="20" height="20" /></span>
-                Delivery Details</h4>
+            <li className='mb-4'>
+              <h5 className='sidebar-item'>
+                <Icon icon="lsicon:order-outline" width="22" height="22" className='me-2' />
+                Orders List
+              </h5>
+            </li>
+            <li className='mb-4'>
+              <h5 className='sidebar-item'>
+                <Icon icon="carbon:delivery" width="22" height="22" className='me-2' />
+                Delivery Details
+              </h5>
             </li>
           </ul>
         </div>
       </Col>
 
-      <Col xl={10} className='mt-4'>
-        <Card className='p-2  fs-5'>Order List</Card>
-        <Row className='d-flex justify-content-between'>
-          <Col xl={3} >
-            <Form.Control className='mt-4' type="text" placeholder="Normal text" />
+      {/* Main Content */}
+      <Col xl={10} className=' p-4'>
+        <Card className='p-3 fs-5  card-bg'>
+          <h4 className='text-dark'>Order List</h4>
+        </Card>
+        <Row className='d-flex justify-content-between mt-3 mb-3'>
+          <Col xl={4}>
+            <Form.Control 
+              className='search-bar shadow-sm' 
+              type="text" 
+              placeholder="Search orders..." 
+            />
           </Col>
         </Row>
-        <Table striped bordered className='mt-4'>
-          <thead>
-            <tr>
-              <th>Sno</th>
-              <th>Order Id</th>
-              <th>Order Name</th>
-              <th>Order Date</th>
-              <th>OrderStatus </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>mar-1</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>mar-1</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>marks</td>
-              <td>Larry the Bird</td>
-              <td>mar-1</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </Table>
+        <Table className='shadow-sm table-bg'>
+      <thead className='table-header'>
+        <tr>
+          <th>Sno</th>
+          <th>Order Id</th>
+          <th>Order Name</th>
+          <th>Phone Number</th>
+          <th>Status</th>
+          <th>Order Confirmed Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr onClick={() => handleRowClick('orderId1')} className='clickable-row'>
+          <td>1</td>
+          <td>ORD001</td>
+          <td>Mark Otto</td>
+          <td>123-456-7890</td>
+          <td>Confirmed</td>
+          <td>2023-10-05</td>
+        </tr>
+        <tr onClick={() => handleRowClick('orderId2')} className='clickable-row'>
+          <td>2</td>
+          <td>ORD002</td>
+          <td>Jacob Thornton</td>
+          <td>234-567-8901</td>
+          <td>Pending</td>
+          <td>2023-10-04</td>
+        </tr>
+        <tr onClick={() => handleRowClick('orderId3')} className='clickable-row'>
+          <td>3</td>
+          <td>ORD003</td>
+          <td>Larry Bird</td>
+          <td>345-678-9012</td>
+          <td>Shipped</td>
+          <td>2023-10-03</td>
+        </tr>
+      </tbody>
+    </Table>
         <div className='d-flex justify-content-center mt-4'>
-
-          <Pagination  >
+          <Pagination>
             <Pagination.First />
             <Pagination.Prev />
             <Pagination.Item>{1}</Pagination.Item>
-
-
             <Pagination.Item>{2}</Pagination.Item>
             <Pagination.Item active>{3}</Pagination.Item>
-            <Pagination.Item >{4}</Pagination.Item>
+            <Pagination.Item>{4}</Pagination.Item>
             <Pagination.Item>{5}</Pagination.Item>
-
             <Pagination.Next />
             <Pagination.Last />
           </Pagination>
         </div>
       </Col>
-
     </Row>
   );
 };
