@@ -12,12 +12,12 @@ import OrganisationDelivery from './pages/OrganisationDelivery';
 import LoginPage from './pages/Login Page';
 import OrganisationEmployeePage from './pages/OrganisationEmployeePage';
 import { Customer } from './pages/Customer';
+import { OrderResult } from './pages/OrderResult';
 
 const App = () => {
   return (
     <Router>
       <Routes>
-     
         <Route path="/" element={<LoginPage />} />
         <Route path="/employee/orders" element={<EmployeeOrderList />} />
         <Route path="/order/:id" element={<OrderDetails />} />
@@ -30,6 +30,7 @@ const App = () => {
         <Route path="/organisation/dashboard" element={<OrganisationDashboard />} />
         <Route path="/organisation/delivery" element={<OrganisationDelivery />} />
         <Route path='/customer/dashboard' element={<Customer/>}/>
+        <Route path='/order-result/dashboard' element={<OrderResult/>}/>
 
       </Routes>
     </Router>
