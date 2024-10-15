@@ -1,101 +1,152 @@
-import React from 'react'
-import { Button, Card, Col, Form, Pagination, Row, Table } from 'react-bootstrap'
+import React, { useState } from 'react';
+import { Button, Card, Col, Form, Pagination, Row, Table, Modal } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
+import jangoLogo from '../../src/images/jango.png'; 
 
 const OrganisationCustomerPage = () => {
+  
+  const [show, setShow] = useState(false);
+
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <div>
-            <Row
-             className='p-0 m-0 vh-100'>
+    <Row className="m-0 vh-100">
+      <Col xl={2} className="sidebar-color p-0">
+        <div className="sidebar side-round h-100 d-flex flex-column">
+          <div className="logo-container text-center mt-4 mb-5">
+            <img src={jangoLogo} alt="Logo" className="logo mb-4" />
+          </div>
+          <ul className="menu list-unstyled px-3 text-dark">
+            <li className="menu-item py-2">
+              <h5><Icon icon="ic:outline-dashboard" width="22" height="22" className="me-2" />Dashboard</h5>
+            </li>
+            <li className="menu-item py-2">
+              <h5><Icon icon="fluent:person-support-16-filled" width="22" height="22" className="me-2" />Employee Details</h5>
+            </li>
+            <li className="menu-item py-2">
+              <h5><Icon icon="fluent:person-48-regular" width="22" height="22" className="me-2" />Customer Details</h5>
+            </li>
+          </ul>
+        </div>
+      </Col>
 
-<Col xl={2} className='sidebar-color'>
-  <div className='sidebar side-round '>
-    <ul className='menu mt-5 px-3 list-unstyled text-white'>
-      <li >
-        <h4>Dashboard</h4>
-      </li>
-      <li className='pt-2'>
-        <h4>Employee Details</h4>
-      </li>
-      <li className='pt-2'>
-        <h4>Customer Details</h4>
-      </li>
-    </ul>
-  </div>
-</Col>
+      {/* Main Content */}
+      <Col xl={10} className="p-4">
+        {/* Customer Details Card */}
+        <Card className="p-2 mb-4 card-bg">
+          <h4>Customer Details</h4>
+        </Card>
 
-<Col xl={10} className='mt-4'>
-  <Card className='p-2  fs-5'>Customer Details</Card>
-  <Row className='d-flex justify-content-between'>
-    <Col xl={3} >
-      <Form.Control className='mt-4' type="text" placeholder="Search" />
-    </Col>
-    <Col xl={1}>
-    <Button className='btn-danger mt-4' >New User</Button>
-    </Col>
-  </Row>
-  <Table striped bordered className='mt-4'>
-    <thead>
-      <tr>
-        <th>Sno</th>
-        <th>Employee Id</th>
-        <th>Organization Userid</th>
-        <th>Email</th>
-        <th>State </th>
-        <th>Actions</th>
-      </tr> 
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>mar-1</td>
-        <td>@mdo</td>
-        <td className='text-center'><Icon icon="mdi:delete" width="20" height="20" /></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>mar-1</td>
-        <td>@fat</td>
-        <td className='text-center'><Icon icon="mdi:delete" width="20" height="20" /></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>marks</td>
-        <td>Larry the Bird</td>
-        <td>mar-1</td>
-        <td>@twitter</td>
-        <td className='text-center'><Icon icon="mdi:delete" width="20" height="20" /></td>
-      </tr>
-    </tbody>
-  </Table>
-<div className='d-flex justify-content-center mt-4'>
+        {/* Search and New User Button */}
+        <Row className="d-flex justify-content-between align-items-center">
+          <Col xl={3}>
+            <Form.Control type="text" placeholder="Search" className="mt-2" />
+          </Col>
+          <Col xl={2} className="text-end">
+            <Button className="btn-danger mt-2" onClick={handleShow}>New User</Button>
+          </Col>
+        </Row>
 
-  <Pagination  >
-      <Pagination.First />
-      <Pagination.Prev />
-      <Pagination.Item>{1}</Pagination.Item>
- 
+        {/* Table */}
+        <Table striped bordered hover responsive className="mt-4">
+          <thead>
+            <tr>
+              <th>Sno</th>
+              <th>Employee Id</th>
+              <th>Organization Userid</th>
+              <th>Email</th>
+              <th>State</th>
+              <th className="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>mar-1</td>
+              <td>@mdo</td>
+              <td className="text-center">
+                <Icon icon="mdi:delete" width="20" height="20" className="text-danger" />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>mar-1</td>
+              <td>@fat</td>
+              <td className="text-center">
+                <Icon icon="mdi:delete" width="20" height="20" className="text-danger" />
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Marks</td>
+              <td>Larry the Bird</td>
+              <td>mar-1</td>
+              <td>@twitter</td>
+              <td className="text-center">
+                <Icon icon="mdi:delete" width="20" height="20" className="text-danger" />
+              </td>
+            </tr>
+          </tbody>
+        </Table>
 
-      <Pagination.Item>{2}</Pagination.Item>
-      <Pagination.Item active>{3}</Pagination.Item>
-      <Pagination.Item >{4}</Pagination.Item>
-      <Pagination.Item>{5}</Pagination.Item>
+        {/* Pagination */}
+        <div className="d-flex justify-content-center mt-4">
+          <Pagination>
+            <Pagination.First />
+            <Pagination.Prev />
+            <Pagination.Item>{1}</Pagination.Item>
+            <Pagination.Item>{2}</Pagination.Item>
+            <Pagination.Item active>{3}</Pagination.Item>
+            <Pagination.Item>{4}</Pagination.Item>
+            <Pagination.Item>{5}</Pagination.Item>
+            <Pagination.Next />
+            <Pagination.Last />
+          </Pagination>
+        </div>
 
-      <Pagination.Next />
-      <Pagination.Last />
-    </Pagination>
-</div>
-
-
-</Col>
-
-</Row>
-    </div>
-  )
-}
+        {/* Modal for Adding New User */}
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add New User</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form>
+              <Form.Group className="mb-3" controlId="formName">
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text" placeholder="Enter name" />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formState">
+                <Form.Label>State</Form.Label>
+                <Form.Control type="text" placeholder="Enter state" />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formEmployeeId">
+                <Form.Label>Employee Id</Form.Label>
+                <Form.Control type="text" placeholder="Enter employee id" />
+              </Form.Group>
+            </Form>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </Col>
+    </Row>
+  );
+};
 
 export default OrganisationCustomerPage;

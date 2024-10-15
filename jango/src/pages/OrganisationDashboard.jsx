@@ -1,44 +1,55 @@
-import React from 'react'
+import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import dashboard from '../../src/images/dashboard.png';
-import { Icon } from '@iconify/react/dist/iconify.js';
+import { Icon } from '@iconify/react';
+import jangoLogo from '../../src/images/jango.png'; 
 
 const OrganisationDashboard = () => {
     return (
-        <Row className='p-0 m-0 vh-100'>
-
-            <Col xl={2} className='sidebar-color'>
-                <div className='sidebar side-round '>
-                    <ul className='menu mt-5 px-3 list-unstyled text-white'>
-                        <li >
-                            <h4>
-                                <span><Icon icon="ic:outline-dashboard" width="20" height="20" /></span>Dashboard</h4>
+        <Row className="m-0 vh-100">
+            <Col xl={2} className="sidebar-color p-0 ">
+                <div className="sidebar side-round h-100 d-flex flex-column">
+                    <div className="p-3 text-center">
+                        <img src={jangoLogo} alt="Logo" className="logo mb-4" />
+                    </div>
+                    <ul className="menu list-unstyled flex-grow-1 text-dark">
+                        <li className="menu-item py-2 px-3 ">
+                            <h5>
+                                <Icon icon="ic:outline-dashboard" width="22" height="22" className="me-2" />
+                                Dashboard
+                            </h5>
                         </li>
-                        <li className='pt-2'>
-                            <h4>
-                                <Icon icon="fluent:person-support-16-filled" width="20" height="20" />
-                                Employee Details</h4>
+                        <li className="menu-item py-2 px-3 ">
+                            <h5>
+                                <Icon icon="fluent:person-support-16-filled" width="22" height="22" className="me-2" />
+                                Employee Details
+                            </h5>
                         </li>
-                        <li className='pt-2'>
-                            <h4>
-                                <Icon icon="fluent:person-48-regular" width="20" height="20" />
-                                Customer Details</h4>
+                        <li className="menu-item py-2 px-3 ">
+                            <h5>
+                                <Icon icon="fluent:person-48-regular" width="22" height="22" className="me-2" />
+                                Customer Details
+                            </h5>
                         </li>
-                        <li className='pt-2'>
-                            <h4>
-                                <Icon icon="lsicon:order-filled" width="20" height="20" />
-                                Orders</h4>
+                        <li className="menu-item py-2 px-3 ">
+                            <h5>
+                                <Icon icon="lsicon:order-filled" width="22" height="22" className="me-2" />
+                                Delivery Details
+                            </h5>
                         </li>
                     </ul>
                 </div>
             </Col>
 
-            <Col xl={10} className='mt-4'>
-                <Card className='p-2  fs-5'>Dashboard</Card>
-                <img className='pt-4 w-100 vh-50' src={dashboard} alt='' />
+            
+            <Col xl={10} className="p-4">
+                <Card className="p-2 mb-4 card-bg">
+                    <h4>Dashboard</h4>
+                </Card>
+                <img className="w-100 vh-50" src={dashboard} alt="Dashboard" />
             </Col>
         </Row>
-    )
-}
+    );
+};
 
 export default OrganisationDashboard;

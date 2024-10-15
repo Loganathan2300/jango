@@ -1,53 +1,119 @@
-
 .sidebar {
-    background:#9fe67e;
+    background: #c8e6c9;
     height: 100%;
-    border-radius: 0 10px 10px 0; 
+    border-radius: 0 10px 10px 0;
 }
-  
+
 .sidebar-item {
-    color: #2b2b2b; 
+    color: #2b2b2b;
     font-weight: 500;
     cursor: pointer;
-    transition: color 0.3s; 
-}
-  
-.sidebar-item:hover {
-    color: #1b5e20;
+    transition: color 0.3s;
 }
 
 .card-bg {
-    background: #9fe67e; 
-    border: none; 
+    background: #c8e6c9;
+    border: none;
 }
-  
+
 .search-bar {
     border-radius: 10px;
-    border: 1px solid #9fe67e; 
+    border: 1px solid #c8e6c9;
 }
 
 .table-bg {
+    border: 1px solid #c8e6c9;
+    border-radius: 0.5rem;
+}
 
-    border: 1px solid #9fe67e;
-    border-radius: 0.5rem; 
-  }
-  
-  .table-header {
-    background-color: #79cb26; 
-    color: white; 
-  }
-  
-  .clickable-row {
-    cursor: pointer; 
-  }
+.table-header {
+    background-color: #c8e6c9;
+    color: white;
+}
 
-  
-/* Pagination */
+.clickable-row {
+    cursor: pointer;
+}
+
 .pagination .page-item.active .page-link {
-    background-color:#9fe67e; /* Active page in light green */
-    border-color: #a5d6a7; /* Border color */
+    background-color: #c8e6c9;
+    border-color: #a5d6a7;
+}
+
+.pagination .page-link {
+    color: #2b2b2b;
+}
+
+.table-hover {
+    background-color: #2b2b2b !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #c8e6c9 !important;
+}
+
+
+.table-hover tbody tr:hover {
+    background-color: #d2fbe5;
 }
   
-.pagination .page-link {
-    color: #2b2b2b; /* Darker text for pagination links */
-}
+  
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #d2fbe5;
+  }
+  
+  .login-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Increased width */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #218838;
+  }
+  

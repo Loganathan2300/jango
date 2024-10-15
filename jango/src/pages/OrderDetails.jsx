@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Card, Col, Row, Table, Spinner } from 'react-bootstrap';
 import { Icon } from '@iconify/react'; 
+import jango from '../../src/images/jango.png';
 
 const OrderDetails = () => {
   const { id } = useParams();  // Capture the order ID from the route
@@ -51,26 +52,29 @@ const OrderDetails = () => {
 
   return (
     <Row className='p-0 m-0 vh-100'>
-      <Col xl={2} className='sidebar p-0'>
-        <div className='sidebar side-round h-100'>
-          <ul className='menu  px-3 list-unstyled'>
-            <li>
-              <h4>
-                <Icon icon="ic:outline-dashboard" width="20" height="20" />
+      <Col xl={2} className='sidebar p-3'>
+        <div className='sidebar h-100'>
+          <ul className='list-unstyled'>
+            <li className='logo-container'>
+              <img src={jango} className="logo" alt="Logo" />
+            </li>
+            <li className='mb-4 mt-4 '>
+              <h5 className='sidebar-item'>
+                <Icon icon="ic:outline-dashboard" width="22" height="22" className='me-2' />
                 Dashboard
-              </h4>
+              </h5>
             </li>
-            <li className='pt-2'>
-              <h4>
-                <Icon icon="lsicon:order-outline" width="20" height="20" />
+            <li className='mb-4'>
+              <h5 className='sidebar-item'>
+                <Icon icon="lsicon:order-outline" width="22" height="22" className='me-2' />
                 Orders List
-              </h4>
+              </h5>
             </li>
-            <li className='pt-2'>
-              <h4>
-                <Icon icon="carbon:delivery" width="20" height="20" />
+            <li className='mb-4'>
+              <h5 className='sidebar-item'>
+                <Icon icon="carbon:delivery" width="22" height="22" className='me-2' />
                 Delivery Details
-              </h4>
+              </h5>
             </li>
           </ul>
         </div>
@@ -78,8 +82,9 @@ const OrderDetails = () => {
 
       {/* Main Content */}
       <Col xl={10} className='p-4 main-content'>
-        <Card className='p-4'>
-          <h2>Order Details</h2>
+        <Card className='p-4 fs-5 '>
+          <h2 className='ps-2 card-bg rounded-2'>Order Details</h2>
+          {/* </Card> */}
           <Table striped bordered className='mt-4'>
             <tbody>
               {Object.entries({
