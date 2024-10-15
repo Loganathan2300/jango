@@ -5,9 +5,9 @@ import { Icon } from '@iconify/react';
 import jango from '../../src/images/jango.png';
 
 const OrderDetails = () => {
-  const { id } = useParams();  // Capture the order ID from the route
+  const { id } = useParams();  
   const [orderDetails, setOrderDetails] = useState(null);
-  const [loading, setLoading] = useState(true); // Track loading state
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const mockOrderDetails = {
@@ -31,15 +31,14 @@ const OrderDetails = () => {
       }
     };
 
-    // Simulate fetching data with a timeout
     const fetchOrderDetails = () => {
       setTimeout(() => {
-        setOrderDetails(mockOrderDetails);  // Set the fetched details
-        setLoading(false); // Set loading to false
+        setOrderDetails(mockOrderDetails);  
+        setLoading(false); 
       }, 1000);
     };
 
-    fetchOrderDetails(); // Fetch the order details
+    fetchOrderDetails(); 
   }, [id]);
 
   if (loading) return (
@@ -80,11 +79,9 @@ const OrderDetails = () => {
         </div>
       </Col>
 
-      {/* Main Content */}
       <Col xl={10} className='p-4 main-content'>
         <Card className='p-4 fs-5 '>
           <h2 className='ps-2 card-bg rounded-2'>Order Details</h2>
-          {/* </Card> */}
           <Table striped bordered className='mt-4'>
             <tbody>
               {Object.entries({

@@ -32,14 +32,13 @@ const OrganisationCustomerPage = () => {
         </div>
       </Col>
 
-      {/* Main Content */}
+
       <Col xl={10} className="p-4">
-        {/* Customer Details Card */}
+
         <Card className="p-2 mb-4 card-bg">
           <h4>Customer Details</h4>
         </Card>
 
-        {/* Search and New User Button */}
         <Row className="d-flex justify-content-between align-items-center">
           <Col xl={3}>
             <Form.Control type="text" placeholder="Search" className="mt-2" />

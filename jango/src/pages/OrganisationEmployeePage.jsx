@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Card, Col, Form, Pagination, Row, Table, Modal } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
-// Import the logo image
-import jangoLogo from '../../src/images/jango.png'; // Add your logo path here
+import jangoLogo from '../../src/images/jango.png'; 
 
 const OrganisationEmployeePage = () => {
   const [show, setShow] = useState(false);
