@@ -1,0 +1,48 @@
+/* .menu-item:hover {
+    background-color: #f1f1f1; 
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.menu-item.active {
+    background-color: #007bff; 
+    color: white; 
+    border-radius: 10px;
+  }
+  
+  .menu-item.active h5 {
+    color: white; 
+  }
+  
+  .menu-item.active img,
+  .menu-item.active svg {
+    filter: brightness(0) invert(1); 
+  }
+   */
+   .menu-item:hover {
+    background-color: #a5d6a7; 
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.menu-item.active {
+    background-color: #eff1ef; /* Light background for active item */
+    color: rgb(20, 20, 20); /* Dark text for active item */
+    border-radius: 10px;
+}
+
+.menu-item.active h5 {
+    color: rgb(20, 20, 20); /* Dark text for active state */
+}
+
+.menu-item.active img,
+.menu-item.active svg {
+    filter: none; /* Remove the filter so the icon retains its original color */
+}
+
+.menu-item img,
+.menu-item svg {
+    transition: filter 0.3s ease; /* Optional: Add a smooth transition effect */
+}
+
+

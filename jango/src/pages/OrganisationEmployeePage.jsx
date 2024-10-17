@@ -58,7 +58,7 @@ const OrganisationEmployeePage = () => {
               <Form.Control className='mt-4' type="text" placeholder="Search" />
             </Col>
             <Col xl={1}>
-              <Button className='btn-danger mt-4'>New User</Button>
+              <Button className='btn-danger mt-4 '>New User</Button>
             </Col>
           </Row>
 

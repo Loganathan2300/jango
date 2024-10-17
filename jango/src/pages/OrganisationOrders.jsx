@@ -1,13 +1,15 @@
-import { Icon } from '@iconify/react/dist/iconify.js'
 import React from 'react'
-import { Card, Col, Form, Pagination, Row, Table } from 'react-bootstrap'
+import { Icon } from '@iconify/react/dist/iconify.js'
+import { Card, Col, Form, Pagination, Row, Table } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import jangoLogo from '../../src/images/jango.png'; 
+
 
 const OrganisationOrders = () => {
   return (
     <div>
       <Row className='p-0 m-0 vh-100'>
-
-        <Col xl={2} className='sidebar-color'>
+        {/* <Col xl={2} className='sidebar-color'>
           <div className='sidebar side-round '>
             <ul className='menu mt-5 px-3 list-unstyled text-white'>
               <li>
@@ -40,13 +42,63 @@ const OrganisationOrders = () => {
               </li>
             </ul>
           </div>
-        </Col>
+        </Col> */}
+        <Col xl={2} className="sidebar-color p-0 ">
+                <div className="sidebar side-round h-100 d-flex flex-column">
+                    <div className="p-3 text-center">
+                        <img src={jangoLogo} alt="Logo" className="logo mb-4" />
+                    </div>
+                    <ul className="menu list-unstyled flex-grow-1 text-dark">
+                        <li className="menu-item py-2 px-3 ">
+                            <h5>
+                                <Icon icon="ic:outline-dashboard" width="22" height="22" className="me-2" />
+                                Dashboard
+                            </h5>
+                        </li>
+                        <li className="menu-item py-2 px-3 ">
+                            <h5>
+                                <Icon icon="fluent:person-support-16-filled" width="22" height="22" className="me-2" />
+                                Employee Details
+                            </h5>
+                        </li>
+                        <li className="menu-item py-2 px-3 ">
+                            <h5>
+                                <Icon icon="fluent:person-48-regular" width="22" height="22" className="me-2" />
+                                Customer Details
+                            </h5>
+                        </li>
+                        <li className="menu-item py-2 px-3 ">
+                            <h5>
+                            <Icon icon="carbon:delivery" width="22" height="22" className='me-2' />
+                                Order List
+                            </h5>
+                        </li>
+                        <li className="menu-item py-2 px-3 ">
+                            <h5>
+                                <Icon icon="lsicon:order-filled" width="22" height="22" className="me-2" />
+                                Delivery Details
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+            </Col>
 
         <Col xl={10} className='mt-4'>
-          <Card className='p-2  fs-5'>Order List</Card>
-          <Row className='d-flex justify-content-between'>
+          <Card className='p-2  fs-5 '>Order List</Card>
+          {/* <Row className='d-flex justify-content-between'>
             <Col xl={3} >
               <Form.Control className='mt-4' type="text" placeholder="Normal text" />
+            </Col>
+          </Row> */}
+          <Row className="d-flex justify-content-between align-items-center mt-5">
+            <Col xl={3} className="d-flex">
+            <Form.Control type="text" placeholder="Search" className="me-2" />
+            <Button variant="outline-success">Filter</Button>
+            </Col>
+            <Col xl={2} className="text-end">
+              <Button className="btn-danger mt-2" onClick>
+                New User
+              </Button>
             </Col>
           </Row>
           <Table striped bordered className='mt-4'>

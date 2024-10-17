@@ -18,17 +18,18 @@ export const OrderResult = () => {
             <div className="logo-container text-center mt-4 mb-3">
               <img src={jangoLogo} alt="Logo" className="logo" />
             </div>
-            <ul className="menu list-unstyled px-3 text-dark">
-              <li className="menu-item py-2">
-                <h5><Icon  icon="ic:outline-dashboard" width="22" height="22" className="me-2"/> Dashboard </h5>
+            <ul className="menu list-unstyled flex-grow-1 text-dark">
+              <li className="menu-item py-2 px-3 d-flex">
+                  <Icon icon="ic:outline-dashboard" width="25" height="25" className="me-2"/>
+                  <h5 > Dashboard </h5>
               </li>
-              <li className="menu-item py-2">
-                <h5><Icon  icon="fluent:person-support-16-filled" width="22" height="22" className="me-2"/>
-                  Order List
-                </h5>
+              <li className="menu-item py-2 px-3 d-flex">
+                  <Icon icon="lsicon:order-outline" width="25" height="25" className='me-2' /> 
+                  <h5> Order List </h5>
               </li>
-              <li className="menu-item py-2">
-                <h5><Icon icon="fluent:person-48-regular" width="22" height="22" className="me-2"/> Delivery Details</h5>
+              <li className="menu-item py-2 px-3 d-flex">
+                  <Icon icon="fluent:person-48-regular" width="26" height="26" className="me-2"/>
+                  <h5> Delivery Details </h5>
               </li>
             </ul>
           </div>
